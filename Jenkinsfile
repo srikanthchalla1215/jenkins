@@ -5,7 +5,7 @@ pipeline {
                 steps {
                     script{
                         sh """
-                           echo "this is hybrid scrip, this is build phase"
+                           echo "this is hybrid script, this is build phase"
                         """
                     }
                 }
@@ -29,7 +29,7 @@ pipeline {
                     script{
                         sh """
                             echo "deploy stage"
-                            echo "this is executing deploy stage"
+                            echo "this executing deploy stage"
                         """
                     }
                 }

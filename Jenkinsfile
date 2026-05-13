@@ -3,20 +3,35 @@ pipeline {
         stages {
             stage('build') {
                 steps {
-                    echo "build stage"
+                    script{
+                        sh """
+                           echo "this is hybrid scrip, this is build phase"
+                        """
+                    }
                 }
             }
 
             stage('Test') {
                 steps {
-                    echo "test stage"
-                    echo "this is executing stage"
+                    script{
+                        sh """
+                            echo "test stage"
+                            echo "this is executing stage"
+                        """
+
+                    }
+
                 }
             }
 
             stage('deploy') {
                 steps {
-                    echo "deploy stage"
+                    script{
+                        sh """
+                            echo "deploy stage"
+                            echo "this is executing deploy stage"
+                        """
+                    }
                 }
             }
         }

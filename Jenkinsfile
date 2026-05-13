@@ -44,6 +44,12 @@ pipeline {
                 always{
                     echo 'I will always say Hello again!'
                 }
+                success{
+                    echo 'this build is  succes'
+                }
+                failure{
+                    echo 'pipeline failed please check the logs'
+                }
             }
     
 }

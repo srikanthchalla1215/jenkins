@@ -10,7 +10,7 @@ pipeline {
                     script{
                         sh """
                            echo "this is hybrid script, this is build phase"
-                           exit 1
+                        //    exit 1
                         """
                     }
                 }

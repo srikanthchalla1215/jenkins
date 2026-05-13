@@ -10,6 +10,7 @@ pipeline {
                     script{
                         sh """
                            echo "this is hybrid script, this is build phase"
+                           exit 1
                         """
                     }
                 }
@@ -45,7 +46,7 @@ pipeline {
                     echo 'I will always say Hello again!'
                 }
                 success{
-                    echo 'this build is  succes'
+                    echo 'this build is  success'
                 }
                 failure{
                     echo 'pipeline failed please check the logs'

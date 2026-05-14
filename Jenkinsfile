@@ -61,12 +61,13 @@ pipeline {
         //         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
         //     }
         // }
-    
-        steps {
-            script {
-               when {
+        when {
                    expression { "${ params.DEPLOY }" == "true" }
                }
+    
+        steps {
+            
+            script {               
                 echo 'Deploying..'
             }
         }

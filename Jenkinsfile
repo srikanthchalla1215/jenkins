@@ -42,7 +42,7 @@ pipeline {
                 echo "hello ${params.PERSON}"
                 echo "hey: ${params.BIOGRAPHY}"
                 echo "TOGGLE: ${params.TOGGLE}"   
-                echo "CHOICE is: ${parms.CHOICE}
+                echo "CHOICE is: ${params.CHOICE}
                 echo"PASSWORD is: ${params.PASSWORD}"
                 }
 

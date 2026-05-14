@@ -26,11 +26,8 @@ pipeline {
         stage('Test') {
             steps {
                 script{
-                    sh """
-                        echo "test stage"
-                        echo "this is executing stage"
-                    """
-
+                echo "duration: ${DURATION}"
+                echo "COURSE is: ${COURSE}"
                 }
 
             }

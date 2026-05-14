@@ -41,7 +41,7 @@ pipeline {
                 script{
                 echo "hello ${params.PERSON}"
                 echo "hey: ${params.BIOGRAPHY}"
-                echo "TOGGLE: ${params.DEPLOY }"   
+                echo "DEPLOY: ${params.DEPLOY }"   
                 echo "CHOICE is: ${params.CHOICE}"
                 echo "PASSWORD is: ${params.PASSWORD}"
                 }

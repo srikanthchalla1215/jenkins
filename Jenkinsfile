@@ -15,7 +15,10 @@ pipeline {
     
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter bio details here')
+        text(name: 'BIOGRAPHY', defaultValue: ' hello srikanth ', description: 'Enter bio details here')
+        booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password') 
 
     }
 
@@ -26,7 +29,10 @@ pipeline {
                     sh """
                         echo "this is hybrid script, this is build phase"
                         echo "duration: ${DURATION}"
-                        echo "COURSE is: ${COURSE}"    
+                        echo "COURSE is: ${COURSE}" 
+                        echo "TOGGLE: ${TOGGLE}"   
+                        echo "CHOICE is: ${CHOICE}
+                        echo"PASSWORD is: ${PASSWORD}"
                     """
                 }
             }

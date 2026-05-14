@@ -30,9 +30,7 @@ pipeline {
                         echo "this is hybrid script, this is build phase"
                         echo "duration: ${DURATION}"
                         echo "COURSE is: ${COURSE}" 
-                        echo "TOGGLE: ${TOGGLE}"   
-                        echo "CHOICE is: ${CHOICE}
-                        echo"PASSWORD is: ${PASSWORD}"
+                        
                     """
                 }
             }
@@ -43,6 +41,9 @@ pipeline {
                 script{
                 echo "hello ${params.PERSON}"
                 echo "hey: ${params.BIOGRAPHY}"
+                echo "TOGGLE: ${params.TOGGLE}"   
+                echo "CHOICE is: ${parms.CHOICE}
+                echo"PASSWORD is: ${params.PASSWORD}"
                 }
 
             

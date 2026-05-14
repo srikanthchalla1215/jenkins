@@ -12,6 +12,10 @@ pipeline {
     options {
         disableConcurrentBuilds()
     }
+    
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    }
 
     stages {
         stage('build') {
@@ -19,8 +23,7 @@ pipeline {
                 script{
                     sh """
                         echo "this is hybrid script, this is build phase"
-                        echo "duration: ${DURATION}"
-                        echo "COURSE is: ${COURSE}"
+                        echo "hello ${params.PERSON}"
                         
                     """
                 }

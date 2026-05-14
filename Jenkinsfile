@@ -60,6 +60,7 @@ pipeline {
             parameters {
                 string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
             }
+        }
     
         steps {
             script {
@@ -81,8 +82,6 @@ pipeline {
         failure{
             echo 'pipeline failed please check the logs'
         }
-    }
-    
     }
 
 }

@@ -15,6 +15,8 @@ pipeline {
     
     parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter bio details here')
+
     }
 
     stages {
@@ -23,8 +25,8 @@ pipeline {
                 script{
                     sh """
                         echo "this is hybrid script, this is build phase"
-                        echo "hello ${params.PERSON}"
-                        
+                        echo "duration: ${DURATION}"
+                        echo "COURSE is: ${COURSE}"    
                     """
                 }
             }
@@ -33,11 +35,11 @@ pipeline {
         stage('Test') {
             steps {
                 script{
-                echo "duration: ${DURATION}"
-                echo "COURSE is: ${COURSE}"
+                echo "hello ${params.PERSON}"
+                echo "hey: ${params.BIOGRAPHY}"
                 }
 
-                sleep 30
+            
 
             }
         }

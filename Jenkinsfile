@@ -21,6 +21,7 @@ pipeline {
                         echo "this is hybrid script, this is build phase"
                         echo "duration: ${DURATION}"
                         echo "COURSE is: ${COURSE}"
+                        
                     """
                 }
             }
@@ -32,6 +33,8 @@ pipeline {
                 echo "duration: ${DURATION}"
                 echo "COURSE is: ${COURSE}"
                 }
+
+                sleep 30
 
             }
         }

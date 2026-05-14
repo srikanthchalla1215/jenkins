@@ -79,4 +79,5 @@ pipeline {
                 echo 'pipeline failed please check the logs'
             }
         }
+    }
 }

@@ -63,5 +63,17 @@ pipeline {
     }
 
     }
+
+    post {
+        always{
+            echo 'I will always say Hello again!'
+        }
+        success{
+            echo 'this build is  success'
+        }
+        failure{
+            echo 'pipeline failed please check the logs'
+        }
+    }
     
 }

@@ -9,6 +9,9 @@ pipeline {
         COURSE = 'joindevops'
         DURATION = '3month'
     }
+    options {
+        disableConcurrentBuilds()
+    }
 
     stages {
         stage('build') {

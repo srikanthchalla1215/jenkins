@@ -4,52 +4,60 @@ pipeline {
             label 'ROBOSHOP'
         }
     }
-        stages {
-            stage('build') {
-                steps {
-                    script{
-                        sh """
-                           echo "this is hybrid script, this is build phase"
-                        """
-                    }
+
+    environment {
+        COURSE = 'joindevops'
+        DURATION = '3month'
+    }
+
+    stages {
+        stage('build') {
+            steps {
+                script{
+                    sh """
+                        echo "this is hybrid script, this is build phase"
+                        echo "duration: ${DURATION}"
+                        echo "COURSE is: ${COURSE}"
+                    """
                 }
             }
-
-            stage('Test') {
-                steps {
-                    script{
-                        sh """
-                            echo "test stage"
-                            echo "this is executing stage"
-                        """
-
-                    }
-
-                }
-            }
-
-            stage('deploy') {
-                steps {
-                    script{
-                        sh """
-                            echo "deploy stage"
-                            echo "this executing deploy stage"
-                        """
-                    }
-                }
-            }
-            
         }
-        post {
-                always{
-                    echo 'I will always say Hello again!'
+
+        stage('Test') {
+            steps {
+                script{
+                    sh """
+                        echo "test stage"
+                        echo "this is executing stage"
+                    """
+
                 }
-                success{
-                    echo 'this build is  success'
-                }
-                failure{
-                    echo 'pipeline failed please check the logs'
+
+            }
+        }
+
+        stage('deploy') {
+            steps {
+                script{
+                    sh """
+                        echo "deploy stage"
+                        echo "this executing deploy stage"
+                    """
                 }
             }
+        }
+        
+    }
+    post {
+            always{
+                echo 'I will always say Hello again!'
+            }
+            success{
+                echo 'this build is  success'
+            }
+            failure{
+                echo 'pipeline failed please check the logs'
+            }
+        }
     
 }
